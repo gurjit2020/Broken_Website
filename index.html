@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,24 +92,37 @@
         </div>
 
         <div class="content">
-            <p>Welcome to the most broken website ever of all time    !</p>
+            <!-- Content for Home Section -->
+            <section id="home">
+                <h2>Home Page</h2>
+                <p>Welcome to the most broken website ever! This is the home page where everything seems just fine, but nothing really works as expected. Enjoy browsing the chaos.</p>
+            </section>
 
-            <!-- Intentional bug: Broken image link -->
-            <img src="invalidimage.jpg" alt="Broken image" />
+            <!-- Content for About Section -->
+            <section id="about" style="margin-top: 50px;">
+                <h2>About Us</h2>
+                <p>We are a fictional company that specializes in creating intentionally broken websites. We believe in learning through failure and offer hands-on experiences for QA testers, web developers, and curious individuals who want to see how broken things can get!</p>
+            </section>
 
-            <!-- Form with validation issues -->
-            <form id="brokenForm">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <button type="submit">Submit</button>
-                <p class="invisible-text">This text is invisible!</p>
-            </form>
+            <!-- Content for Contact Section -->
+            <section id="contact" style="margin-top: 50px;">
+                <h2>Contact Us</h2>
+                <p>If you need to get in touch, fill out the form below. Unfortunately, the form doesn't work, but feel free to give it a try! Otherwise, you can always reach us at <a href="mailto:broken@example.com">broken@example.com</a>.</p>
+
+                <!-- Form with validation issues -->
+                <form id="brokenForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <button type="submit">Submit</button>
+                    <p class="invisible-text">This text is invisible!</p>
+                </form>
+            </section>
         </div>
     </div>
 
