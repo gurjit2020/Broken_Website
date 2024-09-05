@@ -45,6 +45,10 @@
             text-align: center;
         }
 
+        .section {
+            display: none; /* Hide all sections initially */
+        }
+
         /* Intentional bug: Images not properly sized */
         img {
             width: 150px; /* Wrong width */
@@ -74,42 +78,39 @@
             color: white;
             font-size: 18px;
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Broken Header -->
         <h1>Broken Website</h1>
 
-        <!-- Broken Navigation Bar -->
+        <!-- Navigation Bar -->
         <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <!-- Intentional bug: broken link -->
-            <a href="invalidlink.html">Broken Link</a>
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#contact" onclick="showSection('contact')">Contact</a>
         </div>
 
         <div class="content">
-            <!-- Content for Home Section -->
-            <section id="home">
-                <h2>Home Page</h2>
-                <p>Welcome to the most broken website ever! This is the home page where everything seems just fine, but nothing really works as expected. Enjoy browsing the chaos.</p>
+            <!-- Home Section -->
+            <section id="home" class="section">
+                <h2>Welcome to the Broken Website!</h2>
+                <p>This is the home page of the broken website. Enjoy navigating through the various broken features and bugs!</p>
             </section>
 
-            <!-- Content for About Section -->
-            <section id="about" style="margin-top: 50px;">
+            <!-- About Section -->
+            <section id="about" class="section">
                 <h2>About Us</h2>
-                <p>We are a fictional company that specializes in creating intentionally broken websites. We believe in learning through failure and offer hands-on experiences for QA testers, web developers, and curious individuals who want to see how broken things can get!</p>
+                <p>We specialize in creating broken websites for educational purposes. This website is full of intentional bugs for learning and testing.</p>
             </section>
 
-            <!-- Content for Contact Section -->
-            <section id="contact" style="margin-top: 50px;">
+            <!-- Contact Section -->
+            <section id="contact" class="section">
                 <h2>Contact Us</h2>
-                <p>If you need to get in touch, fill out the form below. Unfortunately, the form doesn't work, but feel free to give it a try! Otherwise, you can always reach us at <a href="mailto:broken@example.com">broken@example.com</a>.</p>
+                <p>If you would like to contact us, please use the form below (though it doesn't work correctly):</p>
 
-                <!-- Form with validation issues -->
                 <form id="brokenForm">
                     <div class="form-group">
                         <label for="name">Name:</label>
@@ -127,6 +128,21 @@
     </div>
 
     <script>
+        // Function to show the desired section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Display the home section by default when the page loads
+        showSection('home');
+
         // Intentional bug: JavaScript form validation that doesn’t work properly
         document.getElementById('brokenForm').addEventListener('submit', function(event) {
             event.preventDefault();
